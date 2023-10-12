@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private string _region;
+    [SerializeField] private string _nickName;
     [SerializeField] private InputField _roomName;
     public void Intialize()
     {
@@ -21,10 +22,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     }
 
     public override void OnConnectedToMaster() //called when the client is connected to the Master Server and ready for matchmaking and other tasks.
-
     {
         Debug.Log($"connected to the region: {PhotonNetwork.CloudRegion}");
-        PhotonNetwork.JoinLobby();
+        PhotonNetwork.NickName = _nickName;
+
+        if (!PhotonNetwork.InLobby) PhotonNetwork.JoinLobby();      
     }
 
     public override void OnDisconnected(DisconnectCause cause) //called after disconnecting from the Photon server. The reason for this disconnect is provided as DisconnectCause.
@@ -61,5 +63,15 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public void JoinButton()
     {
         PhotonNetwork.JoinRoom(_roomName.text);
+    }
+
+    public void LeaveButton()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
+
+    public override void OnLeftRoom()
+    {
+        PhotonNetwork.LoadLevel("SampleScene");
     }
 }
