@@ -18,6 +18,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     private void ConnectingToServer()
     {
         PhotonNetwork.ConnectUsingSettings(); //connecting to the server using file settings
+        PhotonNetwork.GameVersion = "1"; //restriction on joining players with different versions to one room. In subsequent versions, more functionality may be added.
         PhotonNetwork.ConnectToRegion(_region); //connecting to the required region
     }
 
@@ -63,15 +64,5 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public void JoinButton()
     {
         PhotonNetwork.JoinRoom(_roomName.text);
-    }
-
-    public void LeaveButton()
-    {
-        PhotonNetwork.LeaveRoom();
-    }
-
-    public override void OnLeftRoom()
-    {
-        PhotonNetwork.LoadLevel("SampleScene");
     }
 }
