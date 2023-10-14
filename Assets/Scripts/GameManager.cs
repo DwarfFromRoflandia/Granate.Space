@@ -8,12 +8,6 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject _userPrefab;
 
-    public void Intialize()
-    {
-        Vector3 position = new Vector3(Random.Range(1, 6f), Random.Range(0.5f, 1f), Random.Range(1f, 6f));
-        PhotonNetwork.Instantiate(_userPrefab.name, position, Quaternion.identity);
-    }
-
     public void LeaveButton() //the current player leaves the room
     {
         PhotonNetwork.LeaveRoom();
@@ -26,6 +20,9 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer) //notification of the nickname of the player who entered the room
     {
+        Vector3 position = new Vector3(Random.Range(1, 6f), Random.Range(0.5f, 1f), Random.Range(1f, 6f));
+        PhotonNetwork.Instantiate(_userPrefab.name, position, Quaternion.identity);
+
         Debug.LogFormat("Player {0} entered the room", newPlayer.NickName);
     }
 

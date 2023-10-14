@@ -1304,6 +1304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _region: eu
+  _nickName: 
   _roomName: {fileID: 1122594280}
 --- !u!4 &2054707530
 Transform:

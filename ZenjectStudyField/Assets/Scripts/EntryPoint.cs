@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class EntryPoint : MonoBehaviour
 {
-    public IGreeting _greeting;
+    [SerializeField] private GameObject _animal;
     Player player = new Player();
+
+    
 
     private void Start()
     {
-        player.SwitchAnimal(_greeting);
-        player.TakeAnimal();
+        if (_animal.TryGetComponent(out IGreeting greeting))
+        {
+            player.SwitchAnimal(greeting);
+            player.TakeAnimal();
+        }       
     }
 }

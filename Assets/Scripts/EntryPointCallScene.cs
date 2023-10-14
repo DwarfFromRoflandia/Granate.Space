@@ -7,6 +7,6 @@ public class EntryPointCallScene : MonoBehaviour
     [SerializeField] private GameManager _gameManager;
     private void Start()
     {
-        _gameManager.Intialize();
+
     }
 }

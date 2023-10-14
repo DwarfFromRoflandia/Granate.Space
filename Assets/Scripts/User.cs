@@ -9,7 +9,7 @@ public class User : MonoBehaviour
     [SerializeField] private float _turningSpeed;
     private PhotonView _photonView;
 
-    public void Intialize()
+    private void Start()
     {
         _photonView = GetComponent<PhotonView>();
     }
