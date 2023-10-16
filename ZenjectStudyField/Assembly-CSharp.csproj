@@ -56,12 +56,17 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Cat.cs" />
-    <Compile Include="Assets\Scripts\Dog.cs" />
-    <Compile Include="Assets\Scripts\Parrot.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\IGreeting.cs" />
     <Compile Include="Assets\Scripts\EntryPoint.cs" />
+    <Compile Include="Assets\Scripts\Animals\Player.cs" />
+    <Compile Include="Assets\Scripts\Animals\Parrot.cs" />
+    <Compile Include="Assets\Scripts\Animals\Cat.cs" />
+    <Compile Include="Assets\Scripts\Animals\Dog.cs" />
+    <Compile Include="Assets\Scripts\Animals\IGreeting.cs" />
+    <Compile Include="Assets\Scripts\SpaceShip\GameManager.cs" />
+    <Compile Include="Assets\Scripts\SpaceShip\SpaceShip.cs" />
+    <Compile Include="Assets\Scripts\SpaceShip\KeyboardController.cs" />
+    <Compile Include="Assets\Scripts\SpaceShip\IControlable.cs" />
+    <Compile Include="Assets\Scripts\SpaceShip\IMoveble.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -286,20 +291,20 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
-      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+    <Reference Include="Zenject-usage">
+      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
-    <Reference Include="Zenject-usage">
-      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
-      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -678,14 +683,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Zenject-Editor.csproj">
-      <Project>{6093E9CD-CC3E-063C-3C05-A7B3743D54F9}</Project>
-      <Name>Zenject-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
-      <Project>{0F40DCC3-4C26-B3E5-3070-17A4FA7D8B98}</Project>
-      <Name>Zenject-PoolMonitor-Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj">
       <Project>{1C36DBF4-07EA-B064-53D8-BACBEF822166}</Project>
       <Name>Zenject-ReflectionBaking-Editor</Name>
@@ -693,6 +690,14 @@
     <ProjectReference Include="Zenject.csproj">
       <Project>{BA4CB91A-7064-CFE0-18F5-6FB19CF8C701}</Project>
       <Name>Zenject</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-Editor.csproj">
+      <Project>{6093E9CD-CC3E-063C-3C05-A7B3743D54F9}</Project>
+      <Name>Zenject-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
+      <Project>{0F40DCC3-4C26-B3E5-3070-17A4FA7D8B98}</Project>
+      <Name>Zenject-PoolMonitor-Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

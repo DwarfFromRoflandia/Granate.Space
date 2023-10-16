@@ -20,6 +20,11 @@ public class User : MonoBehaviour
 
 
         transform.Rotate(0, Input.GetAxis("Horizontal") * _turningSpeed * Time.deltaTime, 0);
-        transform.Translate(0,0, Input.GetAxis("Vertical") * _speed * Time.deltaTime);
+        transform.Translate(0, 0, Input.GetAxis("Vertical") * _speed * Time.deltaTime);
+    }
+
+    private void Update()
+    {
+       
     }
 }

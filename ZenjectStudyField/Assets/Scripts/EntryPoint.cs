@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EntryPoint : MonoBehaviour
 {
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private GameObject _animal;
     Player player = new Player();
 
