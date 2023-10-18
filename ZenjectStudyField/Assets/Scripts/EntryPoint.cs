@@ -16,6 +16,6 @@ public class EntryPoint : MonoBehaviour
         {
             player.SwitchAnimal(greeting);
             player.TakeAnimal();
-        }       
+        }
     }
 }

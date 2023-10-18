@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public IMoveble SpaceShip { get; set; }
-    public IControlable Controller { get; set; }
+    private IMoveble _character;
+    public IControlable _controller;
 
-    //public void Initialize()
-    //{
-    //    _spaceShip = new SpaceShip();
-    //    _controller = new KeyboardController();
-    //}
+    public void Inject(IMoveble character, IControlable controller)
+    {
+        _character = character;
+        _controller = controller;
+    }
 
     private void Update()
     {
-        if (Controller.LeftCmdReceived()) SpaceShip.MoveLeft();
-        else if(Controller.RightCmdReceived()) SpaceShip.MoveRight();
+        if (_controller.LeftCmdReceived()) _character.MoveLeft();
+        else if(_controller.RightCmdReceived()) _character.MoveRight();
     }
 }
