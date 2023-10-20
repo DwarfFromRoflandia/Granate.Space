@@ -5,8 +5,8 @@ using Zenject;
 
 public class Injector : MonoInstaller
 {
-    public override void InstallBindings()
-    {
-        Container.Bind<IControlable>().To<KeyboardController>().FromNew().AsSingle();
-    }
+    //public override void InstallBindings()
+    //{
+    //    Container.Bind<IControlable>().To<KeyboardController>().FromNew().AsSingle();
+    //}
 }

@@ -7,12 +7,10 @@ using Photon.Realtime;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject _userPrefab;
-    public GameObject CloneUser { get; private set; }
     public void Initialize()
     {
         StartCoroutine(SpawnSphereCoroutine());
     }
-
 
     public void LeaveButton() //the current player leaves the room
     {
@@ -36,8 +34,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private IEnumerator SpawnSphereCoroutine()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         Vector3 position = new Vector3(Random.Range(1, 6f), Random.Range(0.5f, 1f), Random.Range(1f, 6f));
-        CloneUser = PhotonNetwork.Instantiate(_userPrefab.name, position, Quaternion.identity);
+        PhotonNetwork.Instantiate(_userPrefab.name, position, Quaternion.identity);
     }
 }

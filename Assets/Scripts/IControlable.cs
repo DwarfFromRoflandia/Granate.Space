@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IControlable 
 {
-    void Controller(float speed, float turningSpeed);
+    void Controller(float speed, float turningSpeed, Transform transform);
 }

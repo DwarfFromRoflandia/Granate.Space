@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19eec417e30218b4e9f9f1affc01e9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _region: eu
+  _region: ru
   _nickName: 
   _roomName: {fileID: 1122594280}
 --- !u!4 &2054707530

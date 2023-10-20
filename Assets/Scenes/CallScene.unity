@@ -220,7 +220,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 1521484754}
   _user: {fileID: 4909890925206113086, guid: e47d3cbe75af1834db8386d08cc3957f, type: 3}
-  _view: {fileID: 4909890925206113075, guid: e47d3cbe75af1834db8386d08cc3957f, type: 3}
 --- !u!4 &567426217
 Transform:
   m_ObjectHideFlags: 0
