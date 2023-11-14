@@ -56,20 +56,25 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\EntryPoint.cs" />
-    <Compile Include="Assets\Scripts\Animals\Player.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\SpaceShip.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\IControlable.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\IMoveble.cs" />
-    <Compile Include="Assets\Scripts\Animals\Parrot.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\KeyboardController.cs" />
-    <Compile Include="Assets\Scripts\Animals\Cat.cs" />
-    <Compile Include="Assets\Scripts\Animals\Dog.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\Injector.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Animals\IGreeting.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\InclinationController.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\SwipeController.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\FamalyCar.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\EntryPoint.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\IControllable.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\IMoveble.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\Transport.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\RacingCar.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\SpawnTransport.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\KeyboardController.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\JoystickController.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\OffRoadCar.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\Player.cs" />
+    <Compile Include="Assets\Scripts\Cars And Guns\SceneInstaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Toon Gas Station\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Toon Gas Station\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Toon Gas Station\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Toon Gas Station\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Toon Gas Station\Documentation\Toon Gas Station Documentation.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyboardController : MonoBehaviour, IControlable
+public class KeyboardController : IControlable
 {
-    public void Controller(float speed, float turningSpeed, Transform transform)
+    private UserMovement _userMovement;
+
+    public KeyboardController(UserMovement userMovement)
     {
-        transform.Rotate(0, Input.GetAxis("Horizontal") * turningSpeed * Time.deltaTime, 0);
-        transform.Translate(0, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime);
+        _userMovement = userMovement;
+    }
+    public void Controller()
+    {
+        _userMovement.MoveUser(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")));
+        _userMovement.RoatateUser(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")));
     }
 }

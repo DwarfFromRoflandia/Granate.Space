@@ -7,6 +7,7 @@ using Photon.Realtime;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject _userPrefab;
+ 
     public void Initialize()
     {
         StartCoroutine(SpawnSphereCoroutine());
