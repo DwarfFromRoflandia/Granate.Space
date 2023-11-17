@@ -6,8 +6,10 @@ using Photon.Pun;
 public class EntryPointCallScene : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
+    [SerializeField] private CameraShake _cameraShake;
     private void Start()
     {
         _gameManager.Initialize();
+        _cameraShake.Initialize();
     }
 }
