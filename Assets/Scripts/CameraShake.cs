@@ -5,20 +5,24 @@ using Cinemachine;
 
 public class CameraShake : MonoBehaviour
 {
-    [SerializeField] private float _shakeIntensity = 1f; //shake force
-    [SerializeField] private float _shakeTime = 0.2f; //shake time
+    [SerializeField] private float _shakeIntensity; //shake force
+    [SerializeField] private float _shakeTime; //shake time
 
     private float timer;
     private CinemachineVirtualCamera _cinemachineVirtualCamera;
+    private CinemachineBasicMultiChannelPerlin _cinemachineBasicMultiChannelPerlin;
+
+
     public void Initialize()
     {
         _cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+        _cinemachineBasicMultiChannelPerlin = _cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         StopShake();
+        EventManager.CameraShakeEvent.AddListener(Shake);
     }
 
     private void Shake()
     {
-        CinemachineBasicMultiChannelPerlin _cinemachineBasicMultiChannelPerlin = _cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         _cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = _shakeIntensity;
 
         timer = _shakeTime;
@@ -26,7 +30,6 @@ public class CameraShake : MonoBehaviour
 
     private void StopShake()
     {
-        CinemachineBasicMultiChannelPerlin _cinemachineBasicMultiChannelPerlin = _cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         _cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
 
         timer = 0;
@@ -34,11 +37,6 @@ public class CameraShake : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Shake();
-        }
-
         if (timer > 0)
         {
             timer -= Time.deltaTime;

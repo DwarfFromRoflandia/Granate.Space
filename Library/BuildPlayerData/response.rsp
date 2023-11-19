@@ -1,6 +1,7 @@
 -a="D:\Clone a repository GitHub\Granate.Space\Library\PlayerScriptAssemblies\Assembly-CSharp.dll"
 -a="D:\Clone a repository GitHub\Granate.Space\Library\PlayerScriptAssemblies\PhotonUnityNetworking.dll"
 -a="D:\Clone a repository GitHub\Granate.Space\Library\PlayerScriptAssemblies\PhotonChat.dll"
+-a="D:\Clone a repository GitHub\Granate.Space\Library\PlayerScriptAssemblies\Cinemachine.dll"
 -a="D:\Clone a repository GitHub\Granate.Space\Library\PlayerScriptAssemblies\UnityEngine.TestRunner.dll"
 -a="D:\Clone a repository GitHub\Granate.Space\Library\PlayerScriptAssemblies\Unity.Timeline.dll"
 -a="D:\Clone a repository GitHub\Granate.Space\Library\PlayerScriptAssemblies\PhotonUnityNetworking.Demos.dll"

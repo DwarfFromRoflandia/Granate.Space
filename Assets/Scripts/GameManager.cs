@@ -26,11 +26,15 @@ public class GameManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer) //notification of the nickname of the player who entered the room
     {
         Debug.LogFormat("Player {0} entered the room", newPlayer.NickName);
+
+        EventManager.OnCameraShake();
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer) //notification of the nickname of the player who left the room
     {
         Debug.LogFormat("Player {0} left the room", otherPlayer.NickName);
+
+        EventManager.OnCameraShake();
     }
 
     private IEnumerator SpawnSphereCoroutine()

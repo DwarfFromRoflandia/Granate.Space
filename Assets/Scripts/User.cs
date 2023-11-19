@@ -11,20 +11,25 @@ public class User : MonoBehaviour
     private PhotonView _photonView;
     private UserMovement _userMovement;
 
+    private Transform _transform;
+
     private void Start()
     {
         _photonView = GetComponent<PhotonView>();
+        _transform = GetComponent<Transform>();
         _userMovement = GetComponent<UserMovement>();
         _controlable = new KeyboardController(_userMovement);
     }
 
     private void FixedUpdate()
     {
-        if (!_photonView.IsMine) return; //PUN has an ownership concept that defines who can control and destroy each PhotonView. With this property, one player will not be able to control and change the movement of another player   
+           
     }
 
     private void Update()
     {
+        if (!_photonView.IsMine) return; //PUN has an ownership concept that defines who can control and destroy each PhotonView. With this property, one player will not be able to control and change the movement of another player   
+
         _controlable.Controller();
     }
 }
