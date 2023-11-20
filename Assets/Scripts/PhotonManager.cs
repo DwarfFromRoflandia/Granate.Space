@@ -9,7 +9,9 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private string _region;
     [SerializeField] private string _nickName;
-    [SerializeField] private InputField _roomName;
+
+    [SerializeField] private InputField _nameCreatedRoom;
+    [SerializeField] private InputField _nameJoinedRoom;
     public void Intialize()
     {
         ConnectingToServer();
@@ -41,7 +43,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
         RoomOptions roomOptions = new RoomOptions(); //roomOptions wraps up common room properties needed when you create rooms.
         roomOptions.MaxPlayers = 20;
-        PhotonNetwork.CreateRoom(_roomName.text, roomOptions, TypedLobby.Default); //creates a new room.When successful, this calls the callbacks OnCreatedRoom and OnJoinedRoom (the latter, cause you join as first player). Creating a room will fail if the room name is already in use. 
+        PhotonNetwork.CreateRoom(_nameCreatedRoom.text, roomOptions, TypedLobby.Default); //creates a new room.When successful, this calls the callbacks OnCreatedRoom and OnJoinedRoom (the latter, cause you join as first player). Creating a room will fail if the room name is already in use. 
 
         PhotonNetwork.LoadLevel("CallScene"); //switching to another scene when CREATING a room
     }
@@ -63,6 +65,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
     public void JoinButton()
     {
-        PhotonNetwork.JoinRoom(_roomName.text);
+        PhotonNetwork.JoinRoom(_nameJoinedRoom.text);
     }
 }
