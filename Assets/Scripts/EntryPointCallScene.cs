@@ -7,10 +7,11 @@ public class EntryPointCallScene : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private CameraShake _cameraShake;
-
+    [SerializeField] private PostProcessingScreenEdges _postProcessingScreenEdges;
     private void Start()
     {
         _cameraShake.Initialize();
         _gameManager.Initialize();
+        _postProcessingScreenEdges.Initialize();
     }
 }

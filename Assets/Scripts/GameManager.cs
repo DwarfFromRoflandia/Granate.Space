@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         Debug.LogFormat("Player {0} entered the room", newPlayer.NickName);
 
         EventManager.OnCameraShake();
+        EventManager.OnGlowEdgesScreen();
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer) //notification of the nickname of the player who left the room
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         Debug.LogFormat("Player {0} left the room", otherPlayer.NickName);
 
         EventManager.OnCameraShake();
+        EventManager.OnGlowEdgesScreen();
     }
 
     private IEnumerator SpawnSphereCoroutine()
