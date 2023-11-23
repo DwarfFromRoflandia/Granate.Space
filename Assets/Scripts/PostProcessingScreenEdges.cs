@@ -25,12 +25,21 @@ public class PostProcessingScreenEdges : MonoBehaviour
 
     private void GlowEffect() => StartCoroutine(GlowEffectCoroutine());
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            GlowEffect();
+
+        }
+    }
+
     private IEnumerator GlowEffectCoroutine()
     {
-        _intensity = 0.1f;
+        _intensity = 0.4f;
         _vignette.enabled.Override(true);
 
-        _vignette.intensity.Override(0.1f);
+        _vignette.intensity.Override(0.4f);
 
         yield return new WaitForSeconds(_glowTime);
 
