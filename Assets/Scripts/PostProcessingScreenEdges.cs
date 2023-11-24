@@ -6,8 +6,9 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class PostProcessingScreenEdges : MonoBehaviour
 {
+    [SerializeField] private float _intensity;
     [SerializeField] private float _glowTime;
-    private float _intensity;
+    private float _valueIntensity;
 
     private PostProcessVolume _volume;
     private Vignette _vignette;
@@ -25,34 +26,25 @@ public class PostProcessingScreenEdges : MonoBehaviour
 
     private void GlowEffect() => StartCoroutine(GlowEffectCoroutine());
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            GlowEffect();
-
-        }
-    }
-
     private IEnumerator GlowEffectCoroutine()
     {
-        _intensity = 0.4f;
+        _valueIntensity = _intensity;
         _vignette.enabled.Override(true);
 
-        _vignette.intensity.Override(0.4f);
+        _vignette.intensity.Override(_intensity);
 
         yield return new WaitForSeconds(_glowTime);
 
-        while (_intensity > 0)
+        while (_valueIntensity > 0)
         {
-            _intensity -= 0.01f;
+            _valueIntensity -= 0.01f;
 
-            if (_intensity < 0)
+            if (_valueIntensity < 0)
             {
-                _intensity = 0;
+                _valueIntensity = 0;
             }
 
-            _vignette.intensity.Override(_intensity);
+            _vignette.intensity.Override(_valueIntensity);
 
             yield return new WaitForSeconds(0.1f);
         }
