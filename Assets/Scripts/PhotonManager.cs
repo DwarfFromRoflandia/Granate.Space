@@ -8,10 +8,11 @@ using UnityEngine.UI;
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private string _region;
-    [SerializeField] private string _nickName;
+    [SerializeField] private InputField _nickNameInCreatedRoom;
+    [SerializeField] private InputField _nickNameInJoinedRoom;
 
-    [SerializeField] private InputField _nameCreatedRoom;
-    [SerializeField] private InputField _nameJoinedRoom;
+    [SerializeField] private InputField _passwordCreatedRoom;
+    [SerializeField] private InputField _passwordJoinedRoom;
     public void Intialize()
     {
         ConnectingToServer();
@@ -27,7 +28,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster() //called when the client is connected to the Master Server and ready for matchmaking and other tasks.
     {
         Debug.Log($"connected to the region: {PhotonNetwork.CloudRegion}");
-        PhotonNetwork.NickName = _nickName;
 
         if (!PhotonNetwork.InLobby) PhotonNetwork.JoinLobby();      
     }
@@ -43,7 +43,9 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
         RoomOptions roomOptions = new RoomOptions(); //roomOptions wraps up common room properties needed when you create rooms.
         roomOptions.MaxPlayers = 20;
-        PhotonNetwork.CreateRoom(_nameCreatedRoom.text, roomOptions, TypedLobby.Default); //creates a new room.When successful, this calls the callbacks OnCreatedRoom and OnJoinedRoom (the latter, cause you join as first player). Creating a room will fail if the room name is already in use. 
+        PhotonNetwork.NickName = _nickNameInCreatedRoom.text;
+
+        PhotonNetwork.CreateRoom(_passwordCreatedRoom.text, roomOptions, TypedLobby.Default); //creates a new room.When successful, this calls the callbacks OnCreatedRoom and OnJoinedRoom (the latter, cause you join as first player). Creating a room will fail if the room name is already in use. 
 
         PhotonNetwork.LoadLevel("CallScene"); //switching to another scene when CREATING a room
     }
@@ -65,6 +67,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
     public void JoinButton()
     {
-        PhotonNetwork.JoinRoom(_nameJoinedRoom.text);
+        PhotonNetwork.NickName = _nickNameInJoinedRoom.text;
+        PhotonNetwork.JoinRoom(_passwordJoinedRoom.text);
     }
 }

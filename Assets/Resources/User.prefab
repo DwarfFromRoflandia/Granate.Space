@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _turningSpeed: 2
+  _nickNameText: {fileID: 0}
 --- !u!114 &3595808713852600172
 MonoBehaviour:
   m_ObjectHideFlags: 0
