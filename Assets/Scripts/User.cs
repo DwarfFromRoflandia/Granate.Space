@@ -14,8 +14,10 @@ public class User : MonoBehaviour, IPunObservable
 
     private IControlable _controlable;
     private PhotonView _photonView;
+    public PhotonView PhotonView { get => _photonView;}
     private UserMovement _userMovement;
     private Camera _camera;
+    private User _user;
 
     private void Start()
     {
@@ -25,11 +27,14 @@ public class User : MonoBehaviour, IPunObservable
         _camera = Camera.main;
 
         _nickNameText.SetText(_photonView.Owner.NickName);
+        _user = GetComponent<User>();
 
         if (!_photonView.IsMine)
         {
             _nickNameText.color = Color.green;
         }
+
+        EventManager.OnWindowUsersEvent(_user);
     }
 
     private void FixedUpdate()
@@ -48,5 +53,11 @@ public class User : MonoBehaviour, IPunObservable
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
 
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.OnRemoveUserFromWindowUsers(_user);
+        Debug.Log("Destroy");
     }
 }

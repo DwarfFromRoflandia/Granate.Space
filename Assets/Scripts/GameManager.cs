@@ -7,6 +7,8 @@ using Photon.Realtime;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject _userPrefab;
+    [SerializeField] private GameObject _userPrefabClone;
+
  
     public void Initialize()
     {
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         Debug.LogFormat("Player {0} entered the room", newPlayer.NickName);
 
         EventManager.OnCameraShake();
-        EventManager.OnGlowEdgesScreen();
+        EventManager.OnGlowEdgesScreen();  
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer) //notification of the nickname of the player who left the room
@@ -43,6 +45,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(1f);
         Vector3 position = new Vector3(Random.Range(1, 6f), Random.Range(0.5f, 1f), Random.Range(1f, 6f));
-        PhotonNetwork.Instantiate(_userPrefab.name, position, Quaternion.identity);
+        _userPrefabClone = PhotonNetwork.Instantiate(_userPrefab.name, position, Quaternion.identity);
     }
 }

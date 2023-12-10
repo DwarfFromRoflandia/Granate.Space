@@ -26,6 +26,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -77,6 +79,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/CallScene.unity:
     - Class: 1
@@ -114,21 +117,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1658}
     - Class: 114
-      Script: {instanceID: 2062}
+      Script: {instanceID: 1662}
     - Class: 114
-      Script: {instanceID: 2636}
+      Script: {instanceID: 2038}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2064}
     - Class: 114
-      Script: {instanceID: 2788}
+      Script: {instanceID: 2638}
     - Class: 114
-      Script: {instanceID: 2860}
+      Script: {instanceID: 2748}
     - Class: 114
-      Script: {instanceID: 2934}
+      Script: {instanceID: 2790}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 3130}
+      Script: {instanceID: 2936}
+    - Class: 114
+      Script: {instanceID: 2984}
+    - Class: 114
+      Script: {instanceID: 3010}
     - Class: 114
       Script: {instanceID: 3140}
     - Class: 114
@@ -139,6 +146,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3484}
     - Class: 114
       Script: {instanceID: 3560}
+    - Class: 114
+      Script: {instanceID: 3816}
     - Class: 114
       Script: {instanceID: 3950}
     - Class: 114
@@ -162,7 +171,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5556}
     - Class: 114
-      Script: {instanceID: 17892}
+      Script: {instanceID: 17414}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -233,31 +242,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1658}
     - Class: 114
-      Script: {instanceID: 1770}
+      Script: {instanceID: 1662}
     - Class: 114
-      Script: {instanceID: 1936}
+      Script: {instanceID: 1772}
     - Class: 114
-      Script: {instanceID: 1966}
+      Script: {instanceID: 1938}
     - Class: 114
-      Script: {instanceID: 1972}
+      Script: {instanceID: 1968}
     - Class: 114
-      Script: {instanceID: 2036}
+      Script: {instanceID: 1974}
     - Class: 114
-      Script: {instanceID: 2166}
+      Script: {instanceID: 2038}
     - Class: 114
-      Script: {instanceID: 2384}
+      Script: {instanceID: 2168}
     - Class: 114
-      Script: {instanceID: 2498}
+      Script: {instanceID: 2386}
     - Class: 114
-      Script: {instanceID: 2554}
+      Script: {instanceID: 2500}
     - Class: 114
-      Script: {instanceID: 2788}
+      Script: {instanceID: 2556}
     - Class: 114
-      Script: {instanceID: 2934}
+      Script: {instanceID: 2790}
     - Class: 114
-      Script: {instanceID: 2982}
+      Script: {instanceID: 2936}
     - Class: 114
-      Script: {instanceID: 3130}
+      Script: {instanceID: 2984}
     - Class: 114
       Script: {instanceID: 3180}
     - Class: 114
@@ -345,6 +354,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: ae83e830e7a90c0aff918c4c2e520825
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: GraphicRaycaster
   - hash:
       serializedVersion: 2
       Hash: 24f79094aff162c9aa69c31d64d777d3
@@ -929,12 +944,6 @@ ScriptsOnlyBuild:
     className: PunCockpit
   - hash:
       serializedVersion: 2
-      Hash: ae83e830e7a90c0aff918c4c2e520825
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: GraphicRaycaster
-  - hash:
-      serializedVersion: 2
       Hash: 215ff4342d4630a7357257fb2bb98949
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1121,7 +1130,7 @@ ScriptsOnlyBuild:
     className: IsConnectedAndReadyProperty
   - hash:
       serializedVersion: 2
-      Hash: cf252f953ffc413842540b0bb41cb83f
+      Hash: 1a4e9c919b861c78203d4548111f88b6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: User
@@ -1781,7 +1790,7 @@ ScriptsOnlyBuild:
     className: ColorGrading
   - hash:
       serializedVersion: 2
-      Hash: 49990c0f4a3103bd67092de1fca37dd4
+      Hash: ddee13e820c3cb6ebc46c67fcab100e4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PhotonManager
@@ -2077,4 +2086,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/CallScene.unity
-  playerPath: D:/BuildPC/Granate.Space/Build7/Granate.Space.exe
+  playerPath: D:/BuildPC/Granate.Space/Build8/Granate.Space.exe
