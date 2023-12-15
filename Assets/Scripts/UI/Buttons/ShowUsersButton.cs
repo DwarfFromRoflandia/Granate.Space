@@ -9,6 +9,7 @@ public class ShowUsersButton : MonoBehaviour
     [SerializeField] private Color _pressedButtonColor;
     [SerializeField] private GameObject _panelUsers;
     [SerializeField] private Image _image;
+    [SerializeField] private RectTransform _blackPanel;
     public bool click = false;
 
     public void Click()
@@ -19,11 +20,13 @@ public class ShowUsersButton : MonoBehaviour
         {
             ChangeColor(_pressedButtonColor);
             _panelUsers.SetActive(true);
+            _blackPanel.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 120); 
         }
         else
         {
             ChangeColor(Color.white);
             _panelUsers.SetActive(false);
+            _blackPanel.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 449);
         }
     }
 

@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class WindowUsers : MonoBehaviour
 {
+    [SerializeField] private GameObject _userPanelPrefab;
+    [SerializeField] private GameObject contentScrollView;
     public List<User> _usersArray = new List<User>();
+    public List<GameObject> _usersPanelArray = new List<GameObject>();
 
     public void Initialize()
     {
