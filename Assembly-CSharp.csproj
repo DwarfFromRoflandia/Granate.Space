@@ -78,12 +78,14 @@
     <Compile Include="Assets\Scripts\CameraShake.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
+    <Compile Include="Assets\Scripts\UI\Buttons\ShowUsersButton.cs" />
     <Compile Include="Assets\Scripts\PhotonManager.cs" />
     <Compile Include="Assets\Scripts\EntryPointSampleScene.cs" />
     <Compile Include="Assets\Scripts\EntryPointCallScene.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
-    <Compile Include="Assets\Scripts\UI\Buttons\ShowUsersButton.cs" />
+    <Compile Include="Assets\Scripts\InformationUserPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\Text\UserNicknameInInformationUserPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -756,6 +758,10 @@
       <Project>{990FFFD8-50FF-B281-EAAB-4755503DEC5B}</Project>
       <Name>PhotonChat</Name>
     </ProjectReference>
+    <ProjectReference Include="CW.Common.csproj">
+      <Project>{DE48D944-10A3-F437-41F2-40F16F38DAC4}</Project>
+      <Name>CW.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
       <Project>{67F6289A-8E66-DD88-43D7-CDF7DC55BC5A}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
@@ -784,6 +790,10 @@
       <Project>{A2AF0210-CFF8-AE74-1F43-24B15162EF5D}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
+    <ProjectReference Include="LeanTransition.csproj">
+      <Project>{B69DE437-94FF-44EA-27F4-2EA7BEF0796C}</Project>
+      <Name>LeanTransition</Name>
+    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.csproj">
       <Project>{6A0E9ADF-AA8C-0B30-B6D8-1C5F4506CBC1}</Project>
       <Name>PhotonUnityNetworking</Name>
@@ -800,9 +810,21 @@
       <Project>{ABA5CF23-5B4D-5FE9-54AC-79D60F64EA38}</Project>
       <Name>PhotonUnityNetworking.Demos</Name>
     </ProjectReference>
+    <ProjectReference Include="LeanCommon.csproj">
+      <Project>{38595D70-1803-F4B1-438B-CB66B91CB26F}</Project>
+      <Name>LeanCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanGUI.csproj">
+      <Project>{FF3315B3-460B-1E27-FEFE-687AFC9A9B16}</Project>
+      <Name>LeanGUI</Name>
+    </ProjectReference>
     <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
       <Project>{4830DD31-0A08-BA3C-916D-5C8194734FDC}</Project>
       <Name>PunDemos.DemoSlotcarEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanTransition.Editor.csproj">
+      <Project>{5CCAF237-728F-12CA-0F11-567985A62736}</Project>
+      <Name>LeanTransition.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
       <Project>{DD56F5B7-0806-9DEA-03A8-CF4A37497851}</Project>

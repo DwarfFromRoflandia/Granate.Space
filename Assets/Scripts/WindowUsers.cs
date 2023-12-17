@@ -6,29 +6,51 @@ using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
 
+
 public class WindowUsers : MonoBehaviour
 {
     [SerializeField] private GameObject _userPanelPrefab;
     [SerializeField] private GameObject contentScrollView;
     public List<User> _usersArray = new List<User>();
     public List<GameObject> _usersPanelArray = new List<GameObject>();
-
+    private int idUser = 0;
     public void Initialize()
     {
-        foreach (var niknameText in GetComponentsInChildren<Text>())
-        {
-            niknameText.text = "";
-        }
-
         EventManager.WindowUsersEvent.AddListener(AddUsers);
         EventManager.RemoveUserFromWindowUsersEvent.AddListener(RemoveUser);
     }
 
+    //public void TestButton()
+    //{
+
+    //    Test.Add(idUser, "Element");
+    //    Debug.Log($"Count: {Test.Count}");
+    //    Debug.Log(Test[idUser]);
+
+    //    idUser++;
+    //}
+
     private void AddUsers(User user)
     {
-        _usersArray.Add(user);
-        SetTexts();
+        Test.Add(idUser, user);
+        Instantiate(_userPanelPrefab,contentScrollView.transform);
+        idUser++;
+        EventManager.OnSetUserNickname(Test, idUser);
+
+        Debug.Log(user.gameObject);
+        Debug.Log(Test.Count);
     }
+
+    Dictionary<int, User> Test = new Dictionary<int, User>()
+    {
+
+    };
+
+    //private void AddUsers(User user)
+    //{
+    //    _usersArray.Add(user);
+    //    SetTexts();
+    //}
 
     private void RemoveUser(User user)
     {
@@ -38,9 +60,9 @@ public class WindowUsers : MonoBehaviour
 
     private void SetTexts()
     {
-        for (int i = 0; i < _usersArray.Count; i++)
+        for (int i = 0; i < Test.Count; i++)
         {
-            transform.GetChild(i).GetComponent<Text>(). text = $"{i} {_usersArray[i].PhotonView.Owner.NickName}";
+            transform.GetChild(i).GetComponent<Text>().text = $"{i} {Test[i].PhotonView.Owner.NickName}";
             Debug.Log("SetText");
         }
     }

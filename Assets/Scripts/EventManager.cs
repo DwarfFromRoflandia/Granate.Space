@@ -9,6 +9,7 @@ public class EventManager
     public static UnityEvent GlowEdgesScreenEvent = new UnityEvent();
     public static UnityEvent<User> WindowUsersEvent = new UnityEvent<User>();
     public static UnityEvent<User> RemoveUserFromWindowUsersEvent = new UnityEvent<User>();
+    public static UnityEvent <Dictionary<int, User>, int> SetUserNicknameEvent = new UnityEvent<Dictionary<int, User>, int>();
 
     public static void OnCameraShake()
     {
@@ -28,5 +29,10 @@ public class EventManager
     public static void OnRemoveUserFromWindowUsers(User user)
     {
         if (RemoveUserFromWindowUsersEvent != null) RemoveUserFromWindowUsersEvent.Invoke(user);
+    }
+
+    public static void OnSetUserNickname(Dictionary<int, User> dictionaryUsers, int key)
+    {
+        if (SetUserNicknameEvent != null) SetUserNicknameEvent.Invoke(dictionaryUsers, key);
     }
 }
