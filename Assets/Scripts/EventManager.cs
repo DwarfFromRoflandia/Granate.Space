@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class EventManager
 {
@@ -9,7 +10,8 @@ public class EventManager
     public static UnityEvent GlowEdgesScreenEvent = new UnityEvent();
     public static UnityEvent<User> WindowUsersEvent = new UnityEvent<User>();
     public static UnityEvent<User> RemoveUserFromWindowUsersEvent = new UnityEvent<User>();
-    public static UnityEvent <Dictionary<int, User>, int> SetUserNicknameEvent = new UnityEvent<Dictionary<int, User>, int>();
+    public static UnityEvent<TextMeshProUGUI> SetUserNicknameEvent = new UnityEvent<TextMeshProUGUI>();
+
 
     public static void OnCameraShake()
     {
@@ -31,8 +33,8 @@ public class EventManager
         if (RemoveUserFromWindowUsersEvent != null) RemoveUserFromWindowUsersEvent.Invoke(user);
     }
 
-    public static void OnSetUserNickname(Dictionary<int, User> dictionaryUsers, int key)
+    public static void OnSetUserNickname(TextMeshProUGUI nicknameText)
     {
-        if (SetUserNicknameEvent != null) SetUserNicknameEvent.Invoke(dictionaryUsers, key);
+        if (SetUserNicknameEvent != null) SetUserNicknameEvent.Invoke(nicknameText);
     }
 }

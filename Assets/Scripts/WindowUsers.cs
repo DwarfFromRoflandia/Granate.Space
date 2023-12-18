@@ -18,39 +18,28 @@ public class WindowUsers : MonoBehaviour
     {
         EventManager.WindowUsersEvent.AddListener(AddUsers);
         EventManager.RemoveUserFromWindowUsersEvent.AddListener(RemoveUser);
+        EventManager.SetUserNicknameEvent.AddListener(SetUserName);
     }
-
-    //public void TestButton()
-    //{
-
-    //    Test.Add(idUser, "Element");
-    //    Debug.Log($"Count: {Test.Count}");
-    //    Debug.Log(Test[idUser]);
-
-    //    idUser++;
-    //}
 
     private void AddUsers(User user)
     {
-        Test.Add(idUser, user);
+        UserDictionary.Add(idUser, user);
         Instantiate(_userPanelPrefab,contentScrollView.transform);
         idUser++;
-        EventManager.OnSetUserNickname(Test, idUser);
-
-        Debug.Log(user.gameObject);
-        Debug.Log(Test.Count);
     }
 
-    Dictionary<int, User> Test = new Dictionary<int, User>()
+    Dictionary<int, User> UserDictionary = new Dictionary<int, User>()
     {
 
     };
 
-    //private void AddUsers(User user)
-    //{
-    //    _usersArray.Add(user);
-    //    SetTexts();
-    //}
+    private void SetUserName(TextMeshProUGUI nicknameText)
+    {
+        for (int i = 0; i < UserDictionary.Count; i++)
+        {
+            nicknameText.text = $"{UserDictionary[i].PhotonView.Owner.NickName}";
+        }
+    }
 
     private void RemoveUser(User user)
     {
@@ -60,9 +49,9 @@ public class WindowUsers : MonoBehaviour
 
     private void SetTexts()
     {
-        for (int i = 0; i < Test.Count; i++)
+        for (int i = 0; i < UserDictionary.Count; i++)
         {
-            transform.GetChild(i).GetComponent<Text>().text = $"{i} {Test[i].PhotonView.Owner.NickName}";
+            transform.GetChild(i).GetComponent<Text>().text = $"{i} {UserDictionary[i].PhotonView.Owner.NickName}";
             Debug.Log("SetText");
         }
     }
