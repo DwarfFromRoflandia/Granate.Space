@@ -12,12 +12,21 @@ public class User : MonoBehaviour, IPunObservable
     [SerializeField] private TextMeshProUGUI _nickNameText;
     [SerializeField] private GameObject _nicknameField;
 
+    public GameObject InformationUserPanel;
+
     private IControlable _controlable;
     private PhotonView _photonView;
     public PhotonView PhotonView { get => _photonView;}
     private UserMovement _userMovement;
     private Camera _camera;
     private User _user;
+
+    public int UserID;
+
+    public void SetID(int ID)
+    {
+        UserID = ID;
+    }
 
     private void Start()
     {
@@ -34,7 +43,9 @@ public class User : MonoBehaviour, IPunObservable
             _nickNameText.color = Color.green;
         }
 
+        UserID++;
         EventManager.OnWindowUsersEvent(_user);
+        Debug.Log($"User ID: {UserID}");
     }
 
     private void FixedUpdate()
@@ -57,7 +68,7 @@ public class User : MonoBehaviour, IPunObservable
 
     private void OnDestroy()
     {
-        EventManager.OnRemoveUserFromWindowUsers(_user);
         Debug.Log("Destroy");
+        Destroy(InformationUserPanel);
     }
 }

@@ -11,48 +11,36 @@ public class WindowUsers : MonoBehaviour
 {
     [SerializeField] private GameObject _userPanelPrefab;
     [SerializeField] private GameObject contentScrollView;
-    public List<User> _usersArray = new List<User>();
-    public List<GameObject> _usersPanelArray = new List<GameObject>();
-    private int idUser = 0;
+    private int _userKey = 0;
+   
+    Dictionary<int, User> UserDictionary = new Dictionary<int, User>()
+    {
+
+    };    
+    
     public void Initialize()
     {
         EventManager.WindowUsersEvent.AddListener(AddUsers);
-        EventManager.RemoveUserFromWindowUsersEvent.AddListener(RemoveUser);
         EventManager.SetUserNicknameEvent.AddListener(SetUserName);
     }
 
     private void AddUsers(User user)
     {
-        UserDictionary.Add(idUser, user);
-        Instantiate(_userPanelPrefab,contentScrollView.transform);
-        idUser++;
+        SpawnInformationUserPanel(user);
+        AddUserInDictionary(user);
     }
-
-    Dictionary<int, User> UserDictionary = new Dictionary<int, User>()
-    {
-
-    };
 
     private void SetUserName(TextMeshProUGUI nicknameText)
     {
-        for (int i = 0; i < UserDictionary.Count; i++)
-        {
-            nicknameText.text = $"{UserDictionary[i].PhotonView.Owner.NickName}";
-        }
+        for (int i = 1; i <= UserDictionary.Count; i++) nicknameText.text = $"{UserDictionary[i].PhotonView.Owner.NickName}";
     }
 
-    private void RemoveUser(User user)
-    {
-        _usersArray.Remove(user);
-        SetTexts();
-    }
+    private void SpawnInformationUserPanel(User user) => user.InformationUserPanel = Instantiate(_userPanelPrefab, contentScrollView.transform);
 
-    private void SetTexts()
+    private void AddUserInDictionary(User user)
     {
-        for (int i = 0; i < UserDictionary.Count; i++)
-        {
-            transform.GetChild(i).GetComponent<Text>().text = $"{i} {UserDictionary[i].PhotonView.Owner.NickName}";
-            Debug.Log("SetText");
-        }
+        _userKey++;
+        user.SetID(_userKey);
+        UserDictionary.Add(_userKey, user);
     }
 }

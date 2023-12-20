@@ -799,7 +799,7 @@ MonoBehaviour:
   _gameManager: {fileID: 1521484754}
   _cameraShake: {fileID: 321982857}
   _postProcessingScreenEdges: {fileID: 1551621105}
-  _windowUsers: {fileID: 1033257820}
+  _windowUsers: {fileID: 1521484756}
 --- !u!4 &567426217
 Transform:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,6 @@ GameObject:
   - component: {fileID: 1033257819}
   - component: {fileID: 1033257818}
   - component: {fileID: 1033257817}
-  - component: {fileID: 1033257820}
   m_Layer: 5
   m_Name: Panel_Users
   m_TagString: Untagged
@@ -1514,22 +1513,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033257815}
   m_CullTransparentMesh: 1
---- !u!114 &1033257820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033257815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b348b7d65489c742aca1137465a32c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _userPanelPrefab: {fileID: 5660993230038272119, guid: 41c438760029cc449b170f0e16659b03, type: 3}
-  contentScrollView: {fileID: 1128435913}
-  _usersArray: []
-  _usersPanelArray: []
 --- !u!1 &1122754126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,6 +2300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1521484755}
   - component: {fileID: 1521484754}
+  - component: {fileID: 1521484756}
   m_Layer: 0
   m_Name: Photon
   m_TagString: Untagged
@@ -2338,6 +2322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userPrefab: {fileID: 4909890925206113083, guid: e47d3cbe75af1834db8386d08cc3957f, type: 3}
   _userPrefabClone: {fileID: 0}
+  UserKey: 0
 --- !u!4 &1521484755
 Transform:
   m_ObjectHideFlags: 0
@@ -2352,6 +2337,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1521484756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521484753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b348b7d65489c742aca1137465a32c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _userPanelPrefab: {fileID: 5660993230038272119, guid: 41c438760029cc449b170f0e16659b03, type: 3}
+  contentScrollView: {fileID: 1128435913}
 --- !u!1 &1551621103
 GameObject:
   m_ObjectHideFlags: 0
