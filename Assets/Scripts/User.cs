@@ -45,7 +45,8 @@ public class User : MonoBehaviour, IPunObservable
 
         UserID++;
         EventManager.OnWindowUsersEvent(_user);
-        Debug.Log($"User ID: {UserID}");
+
+        InformationUserPanel.GetComponent<UserNicknameInInformationUserPanel>().SetUserNickname(_nickNameText.text);
     }
 
     private void FixedUpdate()

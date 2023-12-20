@@ -21,7 +21,6 @@ public class WindowUsers : MonoBehaviour
     public void Initialize()
     {
         EventManager.WindowUsersEvent.AddListener(AddUsers);
-        EventManager.SetUserNicknameEvent.AddListener(SetUserName);
     }
 
     private void AddUsers(User user)
@@ -30,11 +29,7 @@ public class WindowUsers : MonoBehaviour
         AddUserInDictionary(user);
     }
 
-    private void SetUserName(TextMeshProUGUI nicknameText)
-    {
-        for (int i = 1; i <= UserDictionary.Count; i++) nicknameText.text = $"{UserDictionary[i].PhotonView.Owner.NickName}";
-    }
-
+   
     private void SpawnInformationUserPanel(User user) => user.InformationUserPanel = Instantiate(_userPanelPrefab, contentScrollView.transform);
 
     private void AddUserInDictionary(User user)

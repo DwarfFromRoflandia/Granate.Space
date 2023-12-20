@@ -7,9 +7,8 @@ public class UserNicknameInInformationUserPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI userNickname;
 
-    private void Start()
+    public void SetUserNickname(string nickname)
     {
-        userNickname = GetComponent<TextMeshProUGUI>();
-        EventManager.OnSetUserNickname(userNickname);
+        userNickname.text = nickname;
     }
 }
