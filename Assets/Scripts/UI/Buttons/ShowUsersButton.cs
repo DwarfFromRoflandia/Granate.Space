@@ -20,13 +20,13 @@ public class ShowUsersButton : MonoBehaviour
         {
             ChangeColor(_pressedButtonColor);
             _panelUsers.SetActive(true);
-            _blackPanel.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 120); 
+            _blackPanel.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 449); 
         }
         else
         {
             ChangeColor(Color.white);
             _panelUsers.SetActive(false);
-            _blackPanel.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 449);
+            _blackPanel.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 120);
         }
     }
 
