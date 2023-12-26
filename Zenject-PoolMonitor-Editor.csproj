@@ -296,8 +296,14 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Zenject-usage">
+      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
@@ -311,23 +317,17 @@
     <Reference Include="Photon3Unity3D">
       <HintPath>Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll</HintPath>
     </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
-      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject-usage">
-      <HintPath>Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
-    </Reference>
-    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
-      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.12\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
       <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
+      <HintPath>Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
