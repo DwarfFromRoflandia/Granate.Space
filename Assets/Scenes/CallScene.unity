@@ -2716,7 +2716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b348b7d65489c742aca1137465a32c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _informationPanelPrefab: {fileID: 2111278036028602706, guid: 6c29a4f182fcdfd45955864c4b64be04, type: 3}
+  _informationPanelPrefab: {fileID: 3235689942511018671, guid: 6c29a4f182fcdfd45955864c4b64be04, type: 3}
   contentScrollView: {fileID: 1128435913}
 --- !u!1 &1551621103
 GameObject:

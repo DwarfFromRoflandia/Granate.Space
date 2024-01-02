@@ -44,7 +44,7 @@ public class User : MonoBehaviour, IPunObservable
         }
 
         UserID++;
-        EventManager.OnWindowUsersEvent(_user);
+        EventManager.OnAddUsersInDictionary(_user);
 
         InformationUserPanel.GetComponent<UserNicknameInInformationUserPanel>().SetUserNickname(_nickNameText.text);
     }
@@ -70,6 +70,7 @@ public class User : MonoBehaviour, IPunObservable
     private void OnDestroy()
     {
         Debug.Log("Destroy");
+        EventManager.OnRemoveUsersInDictionary(UserID);
         Destroy(InformationUserPanel);
     }
 }
