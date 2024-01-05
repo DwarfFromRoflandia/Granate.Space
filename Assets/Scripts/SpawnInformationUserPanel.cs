@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
-
+using Photon.Pun;
 
 public class SpawnInformationUserPanel : MonoBehaviour
 {
@@ -24,7 +23,7 @@ public class SpawnInformationUserPanel : MonoBehaviour
 
     private void Update()
     {
-        //FindHostLobby();
+
     }
 
     private void AddUsers(User user)
@@ -36,13 +35,6 @@ public class SpawnInformationUserPanel : MonoBehaviour
     private void RemoveUsers(int key)
     {
         UserDictionary.Remove(key);
-
-        Debug.Log($"Удалён пользователь с ключём: {key}");
-
-        foreach (var item in UserDictionary)
-        {
-            Debug.Log($"Отсался пользователь с ключём {item.Key}");
-        }
     }
 
    
@@ -51,45 +43,19 @@ public class SpawnInformationUserPanel : MonoBehaviour
     private void AddUserInDictionary(User user)
     {
         _userKey++;
-        user.SetID(_userKey);
+        user.SetID = _userKey;
         UserDictionary.Add(_userKey, user);
-
-        Debug.Log($"Был добавлен пользователь с ключём {_userKey}");
-
-        foreach (var item in UserDictionary)
-        {
-            Debug.Log($"Другой пользователь в комнате под ключём: {item.Key}");
-        }
     }
 
-    private int Test()
-    {
-        //return UserDictionary.Keys.Min();
-        //return UserDictionary.Keys.FirstOrDefault();
-        //return UserDictionary.Keys.First();
-
-        var first = UserDictionary.First();
-        return first.Key;
-    }
 
     private void FindHostLobby()
     {
-        Debug.Log($"Хост лобби находится под ключём: {Test()}");
-
         //for (int i = 1; i <= UserDictionary.Count; i++)
         //{
-        //    if (i == Test())
+        //    if (UserDictionary[i].PhotonView.Owner.NickName == PhotonNetwork.MasterClient.NickName)
         //    {
-        //        Debug.Log($"Хост лобби находится под ключём {Test()} и имеет ник {UserDictionary[i].PhotonView.Owner.NickName}");
+        //        Debug.Log($"Хост лобби находится под никнеймом {UserDictionary[i].PhotonView.Owner.NickName}");
         //    }
         //}
-
-        foreach (var item in UserDictionary)
-        {
-            if (item.Key == Test())
-            {
-                Debug.Log($"Хост лобби находится под ключём: {Test()}");
-            }
-        }
     }
 }

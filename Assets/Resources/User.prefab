@@ -119,8 +119,6 @@ MonoBehaviour:
   _nickNameText: {fileID: 554235488831294728}
   _nicknameField: {fileID: 6360568549793054129}
   InformationUserPanel: {fileID: 0}
-  UserID: 0
-  testID: 
 --- !u!114 &3595808713852600172
 MonoBehaviour:
   m_ObjectHideFlags: 0

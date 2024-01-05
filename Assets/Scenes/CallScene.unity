@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6237015460630088612, guid: 069844aae5256104497e5de709029a88, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.2691956
+      value: 3.269165
       objectReference: {fileID: 0}
     - target: {fileID: 6237015460630088612, guid: 069844aae5256104497e5de709029a88, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -851,7 +851,7 @@ MonoBehaviour:
   _gameManager: {fileID: 1521484754}
   _cameraShake: {fileID: 321982857}
   _postProcessingScreenEdges: {fileID: 1551621105}
-  _spawnInformationUserPanel: {fileID: 1521484756}
+  _spawnInformationUserPanel: {fileID: 583218712}
 --- !u!4 &567426217
 Transform:
   m_ObjectHideFlags: 0
@@ -878,6 +878,7 @@ GameObject:
   - component: {fileID: 583218710}
   - component: {fileID: 583218709}
   - component: {fileID: 583218708}
+  - component: {fileID: 583218712}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -973,6 +974,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &583218712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583218707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b348b7d65489c742aca1137465a32c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _informationPanelPrefab: {fileID: 7765122643060080452, guid: 6c29a4f182fcdfd45955864c4b64be04, type: 3}
+  contentScrollView: {fileID: 1128435913}
 --- !u!1 &622799313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,7 +2682,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1521484755}
   - component: {fileID: 1521484754}
-  - component: {fileID: 1521484756}
   m_Layer: 0
   m_Name: Photon
   m_TagString: Untagged
@@ -2689,7 +2703,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _userPrefab: {fileID: 4909890925206113083, guid: e47d3cbe75af1834db8386d08cc3957f, type: 3}
   _userPrefabClone: {fileID: 0}
-  UserKey: 0
 --- !u!4 &1521484755
 Transform:
   m_ObjectHideFlags: 0
@@ -2704,20 +2717,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1521484756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521484753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b348b7d65489c742aca1137465a32c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _informationPanelPrefab: {fileID: 3235689942511018671, guid: 6c29a4f182fcdfd45955864c4b64be04, type: 3}
-  contentScrollView: {fileID: 1128435913}
 --- !u!1 &1551621103
 GameObject:
   m_ObjectHideFlags: 0

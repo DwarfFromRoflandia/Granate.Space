@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject _userPrefab;
     [SerializeField] private GameObject _userPrefabClone;
-    public int UserKey;
 
     public void Initialize()
     {
@@ -31,8 +30,6 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         EventManager.OnCameraShake();
         EventManager.OnGlowEdgesScreen();
-
-        UserKey++;
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer) //notification of the nickname of the player who left the room

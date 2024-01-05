@@ -21,12 +21,14 @@ public class User : MonoBehaviour, IPunObservable
     private Camera _camera;
     private User _user;
 
-    public int UserID;
+    //public int UserID;
 
-    public void SetID(int ID)
-    {
-        UserID = ID;
-    }
+    //public void SetID(int ID)
+    //{
+    //    UserID = ID;
+    //}
+
+    public int SetID { get; set; }
 
     private void Start()
     {
@@ -43,10 +45,10 @@ public class User : MonoBehaviour, IPunObservable
             _nickNameText.color = Color.green;
         }
 
-        UserID++;
         EventManager.OnAddUsersInDictionary(_user);
 
         InformationUserPanel.GetComponent<UserNicknameInInformationUserPanel>().SetUserNickname(_nickNameText.text);
+        InformationUserPanel.GetComponent<SetID>().SetIDText(SetID.ToString());
     }
 
     private void FixedUpdate()
@@ -70,7 +72,7 @@ public class User : MonoBehaviour, IPunObservable
     private void OnDestroy()
     {
         Debug.Log("Destroy");
-        EventManager.OnRemoveUsersInDictionary(UserID);
+        EventManager.OnRemoveUsersInDictionary(SetID);
         Destroy(InformationUserPanel);
     }
 }
