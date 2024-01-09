@@ -848,6 +848,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5714b09b5bcc97f468d3eb573d4f6422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _informationPanelPrefab: {fileID: 7765122643060080452, guid: 6c29a4f182fcdfd45955864c4b64be04, type: 3}
+  _contentScrollView: {fileID: 1128435913}
   _gameManager: {fileID: 1521484754}
   _cameraShake: {fileID: 321982857}
   _postProcessingScreenEdges: {fileID: 1551621105}
@@ -987,7 +989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _informationPanelPrefab: {fileID: 7765122643060080452, guid: 6c29a4f182fcdfd45955864c4b64be04, type: 3}
-  contentScrollView: {fileID: 1128435913}
+  _contentScrollView: {fileID: 1128435913}
 --- !u!1 &622799313
 GameObject:
   m_ObjectHideFlags: 0

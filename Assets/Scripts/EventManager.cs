@@ -8,9 +8,9 @@ public class EventManager
 {
     public static UnityEvent CameraShakeEvent = new UnityEvent();
     public static UnityEvent GlowEdgesScreenEvent = new UnityEvent();
-    public static UnityEvent<User> AddUsersInDictionaryEvent = new UnityEvent<User>();
-    public static UnityEvent<int> RemoveUsersInDictionaryEvent = new UnityEvent<int>();
-
+    public static UnityEvent<User> AddUsersInListEvent = new UnityEvent<User>();
+    public static UnityEvent<User> RemoveUsersInListEvent = new UnityEvent<User>();
+    public static UnityEvent<User> SpawnInformationUserPanelEvent = new UnityEvent<User>();
 
     public static void OnCameraShake()
     {
@@ -22,13 +22,18 @@ public class EventManager
         if (GlowEdgesScreenEvent != null) GlowEdgesScreenEvent.Invoke();
     }
 
-    public static void OnAddUsersInDictionary(User user)
+    public static void OnAddUsersInList(User user)
     { 
-        if (AddUsersInDictionaryEvent != null) AddUsersInDictionaryEvent.Invoke(user);
+        if (AddUsersInListEvent != null) AddUsersInListEvent.Invoke(user);
     }
 
-    public static void OnRemoveUsersInDictionary(int key)
+    public static void OnRemoveUsersInList(User user)
     {
-        if (RemoveUsersInDictionaryEvent != null) RemoveUsersInDictionaryEvent.Invoke(key);
+        if (RemoveUsersInListEvent != null) RemoveUsersInListEvent.Invoke(user);
+    }
+
+    public static void OnSpawnInformationUserPanel(User user)
+    {
+        if (SpawnInformationUserPanelEvent != null) SpawnInformationUserPanelEvent.Invoke(user);
     }
 }
