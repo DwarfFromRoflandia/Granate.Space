@@ -8,8 +8,10 @@ public class EventManager
 {
     public static UnityEvent CameraShakeEvent = new UnityEvent();
     public static UnityEvent GlowEdgesScreenEvent = new UnityEvent();
-    public static UnityEvent<User> AddUsersInListEvent = new UnityEvent<User>();
-    public static UnityEvent<User> RemoveUsersInListEvent = new UnityEvent<User>();
+
+    public static UnityEvent<User, GameObject> SetIDInDictionaryEvent = new UnityEvent<User, GameObject>();
+    public static UnityEvent<User> DisableIDInDictionaryEvent = new UnityEvent<User>();
+
     public static UnityEvent<User> SpawnInformationUserPanelEvent = new UnityEvent<User>();
 
     public static void OnCameraShake()
@@ -22,14 +24,14 @@ public class EventManager
         if (GlowEdgesScreenEvent != null) GlowEdgesScreenEvent.Invoke();
     }
 
-    public static void OnAddUsersInList(User user)
+    public static void OnSetIDInDictionary(User user, GameObject InformationalPanel)
     { 
-        if (AddUsersInListEvent != null) AddUsersInListEvent.Invoke(user);
+        if (SetIDInDictionaryEvent != null) SetIDInDictionaryEvent.Invoke(user, InformationalPanel);
     }
 
-    public static void OnRemoveUsersInList(User user)
+    public static void OnDisableInDictionary(User user)
     {
-        if (RemoveUsersInListEvent != null) RemoveUsersInListEvent.Invoke(user);
+        if (DisableIDInDictionaryEvent != null) DisableIDInDictionaryEvent.Invoke(user);
     }
 
     public static void OnSpawnInformationUserPanel(User user)

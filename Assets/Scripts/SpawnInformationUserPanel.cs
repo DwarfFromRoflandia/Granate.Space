@@ -13,5 +13,5 @@ public class SpawnInformationUserPanel : MonoBehaviour
         EventManager.SpawnInformationUserPanelEvent.AddListener(SpawnPanel);
     }
 
-    private void SpawnPanel(User user) => user.InformationUserPanel = Object.Instantiate(_informationPanelPrefab, _contentScrollView.transform);
+    private void SpawnPanel(User user) => user.InformationUserPanel = Instantiate(_informationPanelPrefab, _contentScrollView.transform);
 }

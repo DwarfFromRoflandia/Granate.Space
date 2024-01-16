@@ -28,6 +28,7 @@ public class User : MonoBehaviour, IPunObservable
         _controlable = new KeyboardController(_userMovement);
         _camera = Camera.main;
 
+
         _nickNameText.SetText(_photonView.Owner.NickName);
         _user = GetComponent<User>();
 
@@ -36,12 +37,13 @@ public class User : MonoBehaviour, IPunObservable
             _nickNameText.color = Color.green;
         }
 
-        EventManager.OnAddUsersInList(_user);
         EventManager.OnSpawnInformationUserPanel(_user);
+        EventManager.OnSetIDInDictionary(_user, InformationUserPanel);
 
 
         InformationUserPanel.GetComponent<UserNicknameInInformationUserPanel>().SetUserNickname(_nickNameText.text);
         InformationUserPanel.GetComponent<SetID>().SetIDText(_photonView.Owner.ActorNumber.ToString());
+        InformationUserPanel.GetComponent<SpawnKickButton>().Initialize();
     }
 
     private void FixedUpdate()
@@ -62,10 +64,11 @@ public class User : MonoBehaviour, IPunObservable
 
     }
 
+
     private void OnDestroy()
     {
         Debug.Log("Destroy");
-        EventManager.OnRemoveUsersInList(_user);
+        EventManager.OnDisableInDictionary(_user);
 
         Destroy(InformationUserPanel);
     }

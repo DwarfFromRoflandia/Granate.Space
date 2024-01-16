@@ -7,16 +7,15 @@ using Photon.Pun;
 public class SpawnKickButton : MonoBehaviour
 {
     [SerializeField] private Button prefabKickButton;
-    private GameObject _context;
+    [SerializeField] private GameObject _context;
 
-    private void Start()
+    public void Initialize()
     {
-        _context = gameObject;
-    }
-    public void Spawn(Dictionary<int, User> UserDictionary)
-    {
-       
+        
     }
 
+    public void Spawn(User user)
+    {
 
+    }
 }

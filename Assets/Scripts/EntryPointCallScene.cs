@@ -13,7 +13,6 @@ public class EntryPointCallScene : MonoBehaviour
     [SerializeField] private PostProcessingScreenEdges _postProcessingScreenEdges;
 
     [SerializeField] private SpawnInformationUserPanel _spawnInformationUserPanel;
-    [SerializeField] private UsersList _userList;
 
     private void Start()
     {
@@ -21,8 +20,8 @@ public class EntryPointCallScene : MonoBehaviour
         _gameManager.Initialize();
         _postProcessingScreenEdges.Initialize();
 
-        _spawnInformationUserPanel.Initialize();
+        SetIdService setIdService = new SetIdService();
 
-        UsersList _usersList = new UsersList();
+        _spawnInformationUserPanel.Initialize();
     }
 }
