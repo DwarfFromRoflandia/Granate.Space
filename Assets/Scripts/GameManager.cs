@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject _userPrefab;
     [SerializeField] private GameObject _userPrefabClone;
 
+    [SerializeField] private GameObject _informationPanelPrefab;
+    [SerializeField] private GameObject _informationPanelClone;
+    [SerializeField] private GameObject _contentScrollView;
+
     public void Initialize()
     {
         StartCoroutine(SpawnSphereCoroutine());
@@ -45,5 +49,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(1f);
         Vector3 position = new Vector3(Random.Range(1, 6f), Random.Range(0.5f, 1f), Random.Range(1f, 6f));
         _userPrefabClone = PhotonNetwork.Instantiate(_userPrefab.name, position, Quaternion.identity);
+
+        //_informationPanelClone = PhotonNetwork.Instantiate(_informationPanelPrefab.name, _contentScrollView.transform.position, Quaternion.identity);
+    }
+
+
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        
     }
 }

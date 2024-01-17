@@ -18,15 +18,11 @@ public class SetIdService
     {
         UserDictionary.Add(user.PhotonView.Owner.ActorNumber, user);
         InformationalPanelDictionary.Add(user.PhotonView.Owner.ActorNumber, user.InformationUserPanel);
-
-        //вызов ивента смены кнопок
     }
 
     private void DisableID(User user)
     {
         UserDictionary.Remove(user.PhotonView.Owner.ActorNumber);
         InformationalPanelDictionary.Remove(user.PhotonView.Owner.ActorNumber);
-
-        //вызов ивента смены кнопок
     }
 }

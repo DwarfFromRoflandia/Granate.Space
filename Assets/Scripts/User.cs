@@ -70,6 +70,6 @@ public class User : MonoBehaviour, IPunObservable
         Debug.Log("Destroy");
         EventManager.OnDisableInDictionary(_user);
 
-        Destroy(InformationUserPanel);
+        //Destroy(InformationUserPanel);
     }
 }
