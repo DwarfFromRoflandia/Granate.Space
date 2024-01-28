@@ -6,14 +6,6 @@ using Photon.Realtime;
 
 public class ButtonServiceOnPanelMoreActions : MonoBehaviour
 {
-    private SetIdService _setIdService;
-
-    public void Initialize()
-    {
-        _setIdService = new SetIdService();
-    }
-
-
     private void SetNumberButtons(User user)
     {
         // instead of true, I mean tracking my own panel. it will be implemented later

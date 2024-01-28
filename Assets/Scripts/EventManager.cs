@@ -6,13 +6,20 @@ using TMPro;
 
 public class EventManager
 {
+    public static UnityEvent SpawnUserSphereEvent = new UnityEvent();
+
     public static UnityEvent CameraShakeEvent = new UnityEvent();
     public static UnityEvent GlowEdgesScreenEvent = new UnityEvent();
 
-    public static UnityEvent<User, GameObject> SetIDInDictionaryEvent = new UnityEvent<User, GameObject>();
-    public static UnityEvent<User> DisableIDInDictionaryEvent = new UnityEvent<User>();
+    public static UnityEvent<GameObject> AddPanelInListEvent = new UnityEvent<GameObject>();
+    public static UnityEvent<GameObject> AddUserInListEvent = new UnityEvent<GameObject>();
+    public static UnityEvent<GameObject> RemovePanelInListEvent = new UnityEvent<GameObject>();
+    public static UnityEvent<GameObject> RemoveUserInListEvent = new UnityEvent<GameObject>();
 
-    public static UnityEvent<User> SpawnInformationUserPanelEvent = new UnityEvent<User>();
+    public static void OnSpawnUserSphere()
+    {
+        if (SpawnUserSphereEvent != null) SpawnUserSphereEvent.Invoke();
+    }
 
     public static void OnCameraShake()
     {
@@ -24,18 +31,35 @@ public class EventManager
         if (GlowEdgesScreenEvent != null) GlowEdgesScreenEvent.Invoke();
     }
 
-    public static void OnSetIDInDictionary(User user, GameObject InformationalPanel)
-    { 
-        if (SetIDInDictionaryEvent != null) SetIDInDictionaryEvent.Invoke(user, InformationalPanel);
+    public static void OnAddPanelInList(GameObject InformationalPanel)
+    {
+        if (AddPanelInListEvent != null)
+        {
+            AddPanelInListEvent.Invoke(InformationalPanel);
+        }
     }
 
-    public static void OnDisableInDictionary(User user)
+    public static void OnAddUserInList(GameObject user)
     {
-        if (DisableIDInDictionaryEvent != null) DisableIDInDictionaryEvent.Invoke(user);
+        if (AddUserInListEvent != null)
+        {
+            AddUserInListEvent.Invoke(user);
+        }
     }
 
-    public static void OnSpawnInformationUserPanel(User user)
+    public static void OnRemovePanelInList(GameObject InformationalPanel)
     {
-        if (SpawnInformationUserPanelEvent != null) SpawnInformationUserPanelEvent.Invoke(user);
+        if (RemovePanelInListEvent != null)
+        {
+            RemovePanelInListEvent.Invoke(InformationalPanel);
+        }
+    }
+
+    public static void OnRemoveUserInList(GameObject user)
+    {
+        if (RemoveUserInListEvent != null)
+        {
+            RemoveUserInListEvent.Invoke(user);
+        }
     }
 }

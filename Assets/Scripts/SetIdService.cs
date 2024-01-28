@@ -1,28 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
-public class SetIdService
+public class SetIDService : MonoBehaviour
 {
-    public Dictionary<int, User> UserDictionary = new Dictionary<int, User>();
-    public Dictionary<int, GameObject> InformationalPanelDictionary = new Dictionary<int, GameObject>();
+    [SerializeField] private Transform _contentTransform;
 
-    public SetIdService()
+    public List<GameObject> PanelList = new List<GameObject>();
+
+    public List<GameObject> UserList = new List<GameObject>();
+
+    public void Initialize()
     {
-        EventManager.SetIDInDictionaryEvent.AddListener(SetID);
-        EventManager.DisableIDInDictionaryEvent.AddListener(DisableID);
+        EventManager.AddPanelInListEvent.AddListener(AddPanel);
+        EventManager.AddUserInListEvent.AddListener(AddUser);
+
+        EventManager.RemovePanelInListEvent.AddListener(RemovePanel);
+        EventManager.RemoveUserInListEvent.AddListener(RemoveUser);
     }
 
-    private void SetID(User user, GameObject InformationalPanel)
+    public void AddUser(GameObject user)
     {
-        UserDictionary.Add(user.PhotonView.Owner.ActorNumber, user);
-        InformationalPanelDictionary.Add(user.PhotonView.Owner.ActorNumber, user.InformationUserPanel);
+        UserList.Add(user);
+
+        Debug.Log("SpawnUser");
     }
 
-    private void DisableID(User user)
+    public void AddPanel(GameObject informationalPanel)
     {
-        UserDictionary.Remove(user.PhotonView.Owner.ActorNumber);
-        InformationalPanelDictionary.Remove(user.PhotonView.Owner.ActorNumber);
+        PanelList.Add(informationalPanel);
+        informationalPanel.transform.SetParent(_contentTransform, false);
+
+        Debug.Log("SpawnPanel");
+        ConnectingNodeFromPanelToUser();
+    }
+
+    public void RemoveUser(GameObject user)
+    {
+        UserList.Remove(user);
+    }
+
+    public void RemovePanel(GameObject informationalPanel)
+    {
+        PanelList.Remove(informationalPanel);
+    }
+
+    public void ConnectingNodeFromPanelToUser()
+    {
+        for (int i = 0; i < PanelList.Count; i++)
+        {
+            PanelList[i].GetComponent<UserNicknameInInformationUserPanel>().SetUserNickname(UserList[i].GetComponent<User>().PhotonView.Owner.NickName);
+            PanelList[i].GetComponent<SetID>().SetIDText(UserList[i].GetComponent<User>().PhotonView.Owner.ActorNumber.ToString());
+        }
+    }
+
+    public void ConnectingNodeFromUserToPanel()
+    {
+        for (int i = 0; i < UserList.Count; i++)
+        {
+            
+        }
     }
 }

@@ -13,6 +13,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
     [SerializeField] private InputField _passwordCreatedRoom;
     [SerializeField] private InputField _passwordJoinedRoom;
+
+    [SerializeField] private GameObject _userPrefab;
     public void Intialize()
     {
         ConnectingToServer();

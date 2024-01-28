@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4909890925206113073}
   - component: {fileID: 4909890925206113075}
   - component: {fileID: 4909890925206113072}
+  - component: {fileID: 8162355192171159789}
   m_Layer: 0
   m_Name: User
   m_TagString: Untagged
@@ -118,7 +119,6 @@ MonoBehaviour:
   _turningSpeed: 2
   _nickNameText: {fileID: 554235488831294728}
   _nicknameField: {fileID: 6360568549793054129}
-  InformationUserPanel: {fileID: 0}
 --- !u!114 &3595808713852600172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +189,18 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &8162355192171159789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4909890925206113083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1672011ad2138bb42a3e537724c803e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5493118550890927087
 GameObject:
   m_ObjectHideFlags: 0
