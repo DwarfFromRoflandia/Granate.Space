@@ -12,7 +12,7 @@ public class EntryPointCallScene : MonoBehaviour
     [SerializeField] private CameraShake _cameraShake;
     [SerializeField] private PostProcessingScreenEdges _postProcessingScreenEdges;
 
-    [SerializeField] private SetIDService setIDService;
+    [SerializeField] private ConnectingNodeService setIDService;
 
     private void Start()
     {

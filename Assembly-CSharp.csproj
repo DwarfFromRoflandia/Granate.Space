@@ -68,7 +68,7 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
-    <Compile Include="Assets\Scripts\SetIDService.cs" />
+    <Compile Include="Assets\Scripts\ConnectingNodeService.cs" />
     <Compile Include="Assets\Scripts\PostProcessingScreenEdges.cs" />
     <Compile Include="Assets\Scripts\KeyboardController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
@@ -91,6 +91,7 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Scripts\UI\Text\SetID.cs" />
     <Compile Include="Assets\Scripts\ButtonServiceOnPanelMoreActions.cs" />
+    <Compile Include="Assets\Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -16,6 +16,8 @@ public class EventManager
     public static UnityEvent<GameObject> RemovePanelInListEvent = new UnityEvent<GameObject>();
     public static UnityEvent<GameObject> RemoveUserInListEvent = new UnityEvent<GameObject>();
 
+    public static UnityEvent<int> SpawnButtonsInActionsPanelEvent = new UnityEvent<int>();
+
     public static void OnSpawnUserSphere()
     {
         if (SpawnUserSphereEvent != null) SpawnUserSphereEvent.Invoke();
@@ -60,6 +62,14 @@ public class EventManager
         if (RemoveUserInListEvent != null)
         {
             RemoveUserInListEvent.Invoke(user);
+        }
+    }
+
+    public static void OnSpawnButtonsInActionsPanel(int quantityButtons)
+    {
+        if (SpawnButtonsInActionsPanelEvent != null)
+        {
+            SpawnButtonsInActionsPanelEvent.Invoke(quantityButtons);
         }
     }
 }
