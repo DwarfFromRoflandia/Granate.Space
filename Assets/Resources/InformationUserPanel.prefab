@@ -1010,7 +1010,6 @@ GameObject:
   - component: {fileID: 3152040443163570341}
   - component: {fileID: 477492463323900665}
   - component: {fileID: 2265963506424922746}
-  - component: {fileID: 2990007252124134326}
   - component: {fileID: 4751445381048864308}
   m_Layer: 5
   m_Name: InformationUserPanel
@@ -1141,25 +1140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f43717f90222ea44997ad75c4a23c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2990007252124134326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7765122643060080452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d3f23781fda1e4c83a18607ddcd176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonList:
-  - {fileID: 8934150705661545843}
-  - {fileID: 6843839060676129741}
-  - {fileID: 6372265030718998464}
-  - {fileID: 6542160770211828607}
-  - {fileID: 8064203857675169336}
-  - {fileID: 4404891931529448919}
 --- !u!114 &4751445381048864308
 MonoBehaviour:
   m_ObjectHideFlags: 0

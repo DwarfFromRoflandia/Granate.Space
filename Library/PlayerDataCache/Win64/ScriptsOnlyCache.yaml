@@ -15,7 +15,6 @@ ScriptsOnlyBuild:
     - PostProcessingScreenEdges
     - SetID
     - ShowUsersButton
-    - Test
     - User
     - UserMovement
     - UserNicknameInInformationUserPanel
@@ -270,8 +269,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4436}
     - Class: 114
-      Script: {instanceID: 4444}
-    - Class: 114
       Script: {instanceID: 4650}
     - Class: 114
       Script: {instanceID: 4826}
@@ -499,8 +496,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4290}
     - Class: 114
-      Script: {instanceID: 4444}
-    - Class: 114
       Script: {instanceID: 4578}
     - Class: 114
       Script: {instanceID: 4704}
@@ -599,7 +594,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7124}
     - Class: 114
-      Script: {instanceID: 22132}
+      Script: {instanceID: 24512}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -2147,12 +2142,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ContentSizeFitter
-  - hash:
-      serializedVersion: 2
-      Hash: 01169f0a0864031a7f222c895bb28898
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Test
   - hash:
       serializedVersion: 2
       Hash: 6ff1c52123c50b3d73f35cd0e2e65dfd
