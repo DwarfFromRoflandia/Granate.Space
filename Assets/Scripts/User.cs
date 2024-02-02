@@ -17,7 +17,7 @@ public class User : MonoBehaviour, IPunObservable
     public PhotonView PhotonView { get => _photonView;}
     private UserMovement _userMovement;
     private Camera _camera;
-    private User _user;
+
     private void Start()
     {
         _photonView = GetComponent<PhotonView>();
@@ -27,7 +27,6 @@ public class User : MonoBehaviour, IPunObservable
 
 
         _nickNameText.SetText(_photonView.Owner.NickName);
-        _user = GetComponent<User>();
 
         if (!_photonView.IsMine)
         {

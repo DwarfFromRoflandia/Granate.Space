@@ -5,7 +5,7 @@ using System;
 
 public class ButtonServiceOnPanelMoreActions : MonoBehaviour
 {
-    public List<GameObject> ButtonsList = new List<GameObject>();
+    [SerializeField] private List<GameObject> ButtonsList = new List<GameObject>();
 
     public void Spawn(int quantityButtons)
     {

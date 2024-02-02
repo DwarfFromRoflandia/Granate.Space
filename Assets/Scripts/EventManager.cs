@@ -33,33 +33,21 @@ public class EventManager
 
     public static void OnAddPanelInList(GameObject InformationalPanel)
     {
-        if (AddPanelInListEvent != null)
-        {
-            AddPanelInListEvent.Invoke(InformationalPanel);
-        }
+        if (AddPanelInListEvent != null) AddPanelInListEvent.Invoke(InformationalPanel);
     }
 
     public static void OnAddUserInList(GameObject user)
     {
-        if (AddUserInListEvent != null)
-        {
-            AddUserInListEvent.Invoke(user);
-        }
+        if (AddUserInListEvent != null) AddUserInListEvent.Invoke(user);
     }
 
     public static void OnRemovePanelInList(GameObject InformationalPanel)
     {
-        if (RemovePanelInListEvent != null)
-        {
-            RemovePanelInListEvent.Invoke(InformationalPanel);
-        }
+        if (RemovePanelInListEvent != null) RemovePanelInListEvent.Invoke(InformationalPanel);
     }
 
     public static void OnRemoveUserInList(GameObject user)
     {
-        if (RemoveUserInListEvent != null)
-        {
-            RemoveUserInListEvent.Invoke(user);
-        }
+        if (RemoveUserInListEvent != null) RemoveUserInListEvent.Invoke(user);
     }
 }
